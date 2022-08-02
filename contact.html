@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-Men's Classsic</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="javascript/index.js"></script>
+    <script>
+        function resetErrorMsg() {
+            let errorMsgs = document.querySelectorAll(".error-msg");
+
+            for (let i = 0; i < errorMsgs.length; i++) {
+                errorMsgs[i].style.display = "None";
+            }
+        }
+        function validate() {
+
+            let noerror = true;
+            resetErrorMsg();
+            let email = document.forms["contact"]["email"].value.trim();
+            if (email == "") {
+                document.getElementById("msg-email").style.display = "inline";
+                noerror = false
+            }
+            let message = document.forms["contact"]["message"].value.trim();
+
+            if (message == "") {
+                document.getElementById("msg-message").style.display = "inline";
+                noerror = false
+            }
+
+            if(noerror){
+                document.forms["contact"].reset();
+                $(".success-msg").animate({top: '10px'},200).delay(1500).animate({top: '-100px'},200);
+            }
+           
+            return false;
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #contact_container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        #contact_container h1 {
+            color: var(--primary-color2);
+            text-align: center;
+            opacity: 0.1;
+            animation: opacityGrow 0.3s linear 0.2s 1 forwards;
+
+        }
+
+        @keyframes opacityGrow {
+            0% {
+                opacity: 0.1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #contact_container form {
+            width: 50%;
+            max-width: 500px;
+            padding: 30px;
+            border: 1px solid var(--primary-color2);
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px var(--primary-color2);
+            background-color: white;
+        }
+
+
+        #contact_container label {
+            display: block;
+        }
+
+        #contact_container input {
+            height: 40px;
+        }
+
+
+        #contact_container input,
+        #contact_container textarea {
+            width: 100%;
+            border: 2px solid var(--third-color);
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        #contact_container input[type=text]:focus,
+        #contact_container input[type=email]:focus,
+        #contact_container textarea:focus {
+            border-color: var(--primary-color2);
+            box-shadow: 0 0 3px var(--primary-color1);
+        }
+
+        #btn_container input {
+            margin-top: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+            font-size: 14px;
+        }
+
+        #btn_container input:hover {
+            background-color: var(--secondary-color2);
+            border-color: var(--secondary-color1);
+            color: white;
+        }
+
+        #underline {
+            margin-top: -10px;
+            height: 5px;
+            background-color: var(--primary-color2);
+            animation: widthGrow 0.3s linear 0.2s 1 forwards;
+        }
+
+        @keyframes widthGrow {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .flex_center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            background-color: var(--third-color);
+        }
+
+        .error-msg {
+            display: none;
+            font-size: 12px;
+            color: red;
+            float: right;
+        }
+
+        .contact-title {
+            position: relative;
+            overflow: hidden;
+        }
+        .success-msg {
+            position: absolute;
+            color: white;
+            background-color: rgb(51, 185, 65);
+            right: 0;
+            padding: 4px 8px;
+            font-size: 13px;
+            border-radius: 5px;
+            top: -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Menu -->
+        <div class="nav-container">
+            <ul id="menu-list">
+                <li class="nav-item logo-link"><a href="index.html"><img src="images/nav-logo.png" width="100px" /></a>
+                </li>
+                <div id="menu-container">
+                    <li class="nav-item menu-link"><a class="active" href="#news">Contact</a></li>
+                    <li class="nav-item menu-link"><a href="#news">About</a></li>
+                    <li class="nav-item menu-link"><a href="#about">Products</a></li>
+                    <li class="nav-item menu-link"><a href="#contact">Shop</a></li>
+                    <li class="nav-item menu-link"><a href="index.html">Home</a></li>
+                </div>
+                <div id="ham-icon">
+                    <a href="javascript:void(0);" class="icon" id="ham-btn" onclick="hamClick()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+        </div>
+        </ul>
+        <div id="ham-menu-container">
+            <div id="ham-menu-content">
+                <li class="nav-item"><a class="active" href="#home">Home</a></li>
+                <li class="nav-item"><a href="#contact">Shop</a></li>
+                <li class="nav-item"><a href="#about">Products</a></li>
+                <li class="nav-item"><a href="#news">About</a></li>
+                <li class="nav-item"><a href="#news">Contact</a></li>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div id="contact_container">
+            <form name="contact" onsubmit="return validate()">
+                <div class="flex_center contact-title">
+                    <h1>CONTACT</h1>
+                    <div id="underline"></div>
+                    <div class="success-msg">
+                        Message Sent
+                    </div>
+                </div>
+                <br />
+
+                <label for="email"><b>E-mail <span class="required">*</span>
+                        <span class="error-msg" id="msg-email">E-mail is required!</span></b></label>
+                <input type="email" id="email" name="email" /><br /><br />
+
+                <label for="name"><b>Name </b></label>
+                <input type="text" id="name" name="name" /><br /><br />
+
+                <label for="message"><b>Message <span class="required">*</span>
+                        <span class="error-msg" id="msg-message">Message is required!</span></b></label>
+                <textarea id="message" name="message" rows="5" cols="60"></textarea><br /><br />
+
+                <div id="btn_container">
+                    <input type="submit" value="Submit"><br />
+                    <input type="reset" value="Clear">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-container">
+
+    </div>
+    </div>
+</body>
+</html>

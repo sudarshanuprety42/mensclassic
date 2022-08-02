@@ -1,0 +1,162 @@
+:root {
+  --primary-color1: #66FCF1;
+  --primary-color2: #45A29E;
+  --secondary-color1: #0B0C10;
+  --secondary-color2: #1F2833;
+  --third-color: #C5C6C7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  display: relative;
+}
+
+/* Menu css */
+#menu-list {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--secondary-color1);
+  height: 60px;
+}
+
+li.logo-link {
+  float: left;
+  padding: 10px;
+}
+
+li.menu-link {
+  float: right;
+  text-align: center;
+  padding: 10px 0px;
+  overflow: hidden;
+}
+
+li.nav-item a {
+  display: block;
+  color: var(--third-color);
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  position: relative;
+}
+
+li a.active {
+  color: var(--primary-color2);
+}
+
+li.menu-link a:hover:after {
+  transform: translateX(0px);
+}
+
+
+li.menu-link a::after {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: grey;
+  transform: translateX(-110px);
+  transition: transform 0.16s linear;
+}
+
+#ham-menu-container {
+  position: relative;
+  display: none;
+}
+
+#ham-menu-content {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  background-color: var(--secondary-color2);
+  width: 100%;
+  z-index: -1;
+  transform: translateY(-300px);
+  transition: transform ease-in-out 2s;
+}
+
+.hamMenuShow {
+  transition: transform ease-in-out 0.1s;
+  transform: translateY(300px);
+}
+
+#ham-menu-container li {
+  list-style: none;
+  padding: 4px;
+}
+
+#ham-menu-container li a {
+  text-decoration: none;
+  padding: 10px;
+  color: var(--third-color);
+  margin: 2px;
+  color: white;
+  display: block;
+}
+
+#ham-icon {
+  float: right;
+  display: none;
+  margin-right: 10px;
+  height: 60px;
+}
+
+#ham-icon a {
+  display: block;
+}
+
+#ham-icon i {
+  font-size: 40px;
+  color: var(--primary-color1)
+}
+
+#ham-icon i:active {
+  color: var(--third-color);
+}
+
+@media only screen and (max-width: 900px) {
+  #menu-container {
+    display: none;
+  }
+
+  #ham-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  #ham-menu-container {
+    display: block;
+  }
+}
+
+.main-content {
+  min-height: calc(100vh - 230px);
+}
+
+/* Footer css */
+.footer-container {
+  height: 150px;
+  background-color: var(--secondary-color1);
+  width: 100%;
+  margin-top: 20px;
+}
+
