@@ -14,6 +14,7 @@ body,
 html {
   margin: 0;
   padding: 0;
+  /* overflow: hidden; */
 }
 
 body {
@@ -80,6 +81,7 @@ li.menu-link a::after {
 
 #ham-menu-container {
   position: relative;
+  z-index: 11;
   display: none;
 }
 
@@ -89,14 +91,14 @@ li.menu-link a::after {
   margin: 0;
   background-color: var(--secondary-color2);
   width: 100%;
-  z-index: -1;
-  transform: translateY(-300px);
+  z-index: 11;
+  transform: translateY(-350px);
   transition: transform ease-in-out 2s;
 }
 
 .hamMenuShow {
   transition: transform ease-in-out 0.1s;
-  transform: translateY(300px);
+  transform: translateY(350px);
 }
 
 #ham-menu-container li {
@@ -157,6 +159,6 @@ li.menu-link a::after {
   height: 150px;
   background-color: var(--secondary-color1);
   width: 100%;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
