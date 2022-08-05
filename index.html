@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +11,94 @@
     <script src="javascript/index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        .avatar-welcome {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px 100px;
+            background-image: linear-gradient(.25turn,
+                    var(--third-color),
+
+                    var(--primary-color2));
+            /* background-color: rgb(79, 165, 165); */
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .avatar-welcome h1 {
+            font-size: 2rem;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: var(--primary-color1);
+        }
+
+        .avatar-welcome p {
+            font-size: 1rem;
+            font-family: cursive;
+            color: var(--secondary-color1);
+        }
+        .links-container {
+           width: 100%;
+           background-color: var(--secondary-color2);
+        }
+        .links-content {
+            width: 70%;
+            min-width: 300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+        }
+        .link-item {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 20px;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .link-item img:hover {
+            filter:brightness(10%);
+        }
+
+        .centered {
+            color: white;
+            font-size: 35px;
+            font-weight: bolder;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .link-item img {
+            border-radius: 10px;
+            width: 100%;
+            margin: 0 auto;
+            filter:brightness(40%);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .test-class {
+            width: 100%;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .link-item {
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
@@ -45,9 +132,49 @@
             </div>
         </div>
 
-        <div class="main-content">
-        <!-- Your Code Here -->
-           
+        <div class="main-content">  
+            <div class="avatar-welcome">
+                <div class="welcome">
+                    <div data-aos="zoom-out" data-aos-delay="300" data-aos-once="true">
+                        <h1>Welcome to Men's Classic </h1>
+                        <p>Your Everyday Mens Care</p>
+                    </div>
+                </div>
+                <div class="avatar">
+                    <div data-aos="fade-right" data-aos-delay="50" data-aos-once="true">
+                        <img src="images/men_avatar.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="links-container">
+                <div class="links-content">
+                    <div class="link-item">
+                        <div class="test-class" data-aos="fade-right">
+                            <a href="#">
+                                <img src="images/products.jpg" alt="">
+                                <div class="centered">Products</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="link-item">
+                        <div class="test-class" data-aos="fade-left">
+                        <a href="#">
+                            <img src="images/about.jpg" alt="">
+                            <div class="centered">About</div>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="link-item">
+                        <div class="test-class" data-aos="fade-up">
+                        <a href="contact.html">
+                            <img src="images/contact.png" alt="">
+                            <div class="centered">Contact</div>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -63,7 +190,9 @@
             
         </div>
     </div>
-
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
