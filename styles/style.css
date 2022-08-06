@@ -4,6 +4,7 @@
   --secondary-color1: #0B0C10;
   --secondary-color2: #1F2833;
   --third-color: #C5C6C7;
+  --error-color: #ff0000;
 }
 
 * {
@@ -156,6 +157,137 @@ li.menu-link a::after {
   min-height: calc(100vh - 230px);
 }
 
+
+
+/*Login Css*/
+.main-content{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: var(--primary-color1);
+
+}
+
+.login-container{
+  width: 400px;
+  max-width: 400px;
+  margin: 18px;
+  padding: 36px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  border-radius: 40px;
+  background: white;
+}
+
+.login-container, .form-input, .form-button{
+  font: 500 18px;
+}
+
+.form-hidden{
+  display: none;
+}
+
+.form > *:first-child
+{
+  margin-top: 0;
+}
+
+.form > *:last-child
+{
+  margin-bottom: 0;
+}
+
+.form-title
+{
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.form-message
+{
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.form-message-error
+{
+  color: var(--error-color);
+}
+
+.form-message-success
+{
+  color: var(--primary-color1);
+}
+.form-input-group
+{
+  margin-bottom: 18px;
+}
+.form-input{
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: 40px;
+  border: 1px solid lightgray;
+  outline: none;
+  background: #eeeeee;
+  transition: background 0.2s, border-color 0.2s;
+}
+.form-input:focus{
+  border-color: var(--primary-color1);
+  background: azure;
+}
+
+.form-input-error{
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+.form-input-error-message{
+  margin-top: 9px;
+  font-size: 15px;
+  color: var(--error-color);
+}
+
+.form-button{
+  width: 100%;
+  padding: 18px 36px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 40px;
+  outline: none;
+  cursor: pointer;
+  background: var(--primary-color1);
+}
+
+.form-button:hover
+{
+  background: var(--primary-color2);
+}
+
+.form-button:active
+{
+  transform: scale(0.98);
+}
+
+.form-text
+{
+  text-align: center;
+}
+
+.form-link
+{
+  color: var(--primary-color2);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-link:hover{
+  text-decoration: underline;
+}
 /* Footer css */
 .footer-container {
   height: 150px;

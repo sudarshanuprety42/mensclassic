@@ -48,6 +48,55 @@
 
         <div class="main-content">
             <!-- Your code here -->
+
+            <div class="login-container">
+                <form action="POST" class="form" id="login">
+                    <h1 class="form-title">Login</h1>
+                    <div class="form-message form-message-error"></div>
+                    <div class="form-input-group">
+                        <input type="text" id="loginUserName" class="form-input" autofocus placeholder="Username">
+                        <div class="form-input-error-message"></div>
+                    </div>
+                    <div class="form-input-group">
+                        <input type="password" id="loginPwd" class="form-input" autofocus placeholder="Password">
+                        <div class="form-input-error-message"></div>
+                    </div>
+                    <button class="form-button" type="submit">Log in</button>
+                    <p class="form-text">
+                        <a href="#" class="form-link">Forgot your Password?</a>
+                    </p>
+
+                    <p class="form-text">
+                        <a class="form-link"  href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+                    </p>
+                </form>
+                <form action="POST" class="form form-hidden" id="creatAccount">
+                    <h1 class="form-title">Create Account</h1>
+                    <div class="form-message form-message-error"></div>
+                    <div class="form-input-group">
+                        <input type="text"  id="signupUsername" class="form-input" autofocus placeholder="Username">
+                        <div class="form-input-error-message"></div>
+                    </div>
+                    <div class="form-input-group">
+                        <input type="email" id="signupEmail" class="form-input" autofocus placeholder="Email Address">
+                        <div class="form-input-error-message"></div>
+                    </div>
+                    <div class="form-input-group">
+                        <input type="password" id="signupPwd" class="form-input" autofocus placeholder="Password">
+                        <div class="form-input-error-message"></div>
+                    </div>
+                    <div class="form-input-group">
+                        <input type="password" id="signupCPwd" class="form-input" autofocus placeholder="Confirm Password">
+                        <div class="form-input-error-message"></div>
+                    </div>
+                    <button class="form-button" type="submit">Sign Up</button>
+            
+
+                    <p class="form-text">
+                        <a class="form-link" href="./"  id="linkLogIn">Already have an account? Sign in</a>
+                    </p>
+                </form>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -63,7 +112,7 @@
             
         </div>
     </div>
-
+    <script src="javascript\login.js"></script>
 </body>
 
 </html>
