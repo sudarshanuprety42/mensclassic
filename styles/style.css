@@ -288,6 +288,49 @@ li.menu-link a::after {
 .form-link:hover{
   text-decoration: underline;
 }
+
+/*About us css*/
+
+.about_container{
+  position: absolute;
+   padding: 25px 40px; 
+   width: 35%;
+   top: 25%;
+   left: 5%;
+   /*Shadow effect*/
+   background: rgba(0, 0, 0, 0.7);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(5px);
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   
+}
+
+.about_us{
+    
+  color: var(--primary-color1);
+  font-size: large;
+  font-weight: 500;
+  padding: 00.5em;
+  vertical-align: baseline;
+}
+
+
+.visit-us{
+  margin-top: 60px;
+  clear: both;
+  text-align: center;
+}
+
+.map{
+  float: right;
+    position: absolute;
+    top: 70px;
+    left: 60%;
+    width: 35%;
+    height: 60%;
+}
+
 /* Footer css */
 .footer-container {
   height: 150px;
