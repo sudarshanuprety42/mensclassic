@@ -12,6 +12,136 @@
     <script src="javascript/index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .main-content{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: var(--primary-color1);
+
+}
+
+.login-container{
+  width: 400px;
+  max-width: 400px;
+  margin: 18px;
+  padding: 36px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  border-radius: 40px;
+  background: white;
+}
+
+.login-container, .form-input, .form-button{
+  font: 500 18px;
+}
+
+.form-hidden{
+  display: none;
+}
+
+.form > *:first-child
+{
+  margin-top: 0;
+}
+
+.form > *:last-child
+{
+  margin-bottom: 0;
+}
+
+.form-title
+{
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.form-message
+{
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.form-message-error
+{
+  color: var(--error-color);
+}
+
+.form-message-success
+{
+  color: var(--primary-color1);
+}
+.form-input-group
+{
+  margin-bottom: 18px;
+}
+.form-input{
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: 40px;
+  border: 1px solid lightgray;
+  outline: none;
+  background: #eeeeee;
+  transition: background 0.2s, border-color 0.2s;
+}
+.form-input:focus{
+  border-color: var(--primary-color1);
+  background: azure;
+}
+
+.form-input-error{
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+.form-input-error-message{
+  margin-top: 9px;
+  font-size: 15px;
+  color: var(--error-color);
+}
+
+.form-button{
+  width: 100%;
+  padding: 18px 36px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 40px;
+  outline: none;
+  cursor: pointer;
+  background: var(--primary-color1);
+}
+
+.form-button:hover
+{
+  background: var(--primary-color2);
+}
+
+.form-button:active
+{
+  transform: scale(0.98);
+}
+
+.form-text
+{
+  text-align: center;
+}
+
+.form-link
+{
+  color: var(--primary-color2);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-link:hover{
+  text-decoration: underline;
+}
+    </style>
 </head>
 
 <body>
@@ -24,10 +154,10 @@
                 <div id="menu-container">
                     <li class="nav-item menu-link"><a href="contact.html">Contact</a></li>
                     <li class="nav-item menu-link"><a href="about.html">About</a></li>
-                    <li class="nav-item menu-link"><a href="#products">Products</a></li>
+                    <li class="nav-item menu-link"><a href="products.html">Products</a></li>
                     <li class="nav-item menu-link"><a href="#shop">Shop</a></li>
-                    <li class="nav-item menu-link"><a href="login.html">Log in</a></li>
-                    <li class="nav-item menu-link"><a class="active" href="index.html">Home</a></li>
+                    <li class="nav-item menu-link"><a  class="active" href="login.html">Log in</a></li>
+                    <li class="nav-item menu-link"><a href="index.html">Home</a></li>
                 </div>
                 <div id="ham-icon">
                     <a href="javascript:void(0);" class="icon" id="ham-btn" onclick="hamClick()">

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="javascript/index.js"></script>
     <script>
         function resetErrorMsg() {
@@ -56,24 +58,14 @@
         #contact_container h1 {
             color: var(--primary-color2);
             text-align: center;
-            opacity: 0.1;
+            opacity: 1;
             animation: opacityGrow 0.3s linear 0.2s 1 forwards;
 
         }
 
-        @keyframes opacityGrow {
-            0% {
-                opacity: 0.1;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
         #contact_container form {
-            width: 50%;
-            max-width: 500px;
+            width: 95%;
+            max-width: 550px;
             padding: 30px;
             border: 1px solid var(--primary-color2);
             border-radius: 10px;
@@ -125,17 +117,7 @@
             margin-top: -10px;
             height: 5px;
             background-color: var(--primary-color2);
-            animation: widthGrow 0.3s linear 0.2s 1 forwards;
-        }
-
-        @keyframes widthGrow {
-            0% {
-                width: 0%;
-            }
-
-            100% {
-                width: 100%;
-            }
+            width: 100%;
         }
 
         .flex_center {
@@ -183,9 +165,10 @@
                 <div id="menu-container">
                     <li class="nav-item menu-link"><a class="active" href="contact.html">Contact</a></li>
                     <li class="nav-item menu-link"><a href="about.html">About</a></li>
-                    <li class="nav-item menu-link"><a href="#ab">Products</a></li>
+                    <li class="nav-item menu-link"><a href="products.html">Products</a></li>
                     <li class="nav-item menu-link"><a href="#news">Shop</a></li>
                     <li class="nav-item menu-link"><a href="login.html">Log in</a></li>
+
                     <li class="nav-item menu-link"><a href="index.html">Home</a></li>
                 </div>
                 <div id="ham-icon">
@@ -199,7 +182,7 @@
             <div id="ham-menu-content">
                 <li class="nav-item"><a class="active" href="index.html">Home</a></li>
                 <li class="nav-item"><a href="#contact">Shop</a></li>
-                <li class="nav-item"><a href="#about">Products</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
                 <li class="nav-item"><a href="about.html">About</a></li>
                 <li class="nav-item"><a href="contact.html">Contact</a></li>
                 <li class="nav-item"><a href="login.html">Log In</a></li>
@@ -207,34 +190,38 @@
         </div>
     </div>
     <div class="main-content">
-        <div id="contact_container">
-            <form name="contact" onsubmit="return validate()">
-                <div class="flex_center contact-title">
-                    <h1>CONTACT</h1>
-                    <div id="underline"></div>
-                    <div class="success-msg">
-                        Message Sent
+        <div data-aos="flip-up">
+            <div id="contact_container">
+                <form name="contact" onsubmit="return validate()">
+                    <div class="flex_center contact-title">
+                        <h1>CONTACT</h1>
+                        <div id="underline"></div>
+                        <div class="success-msg">
+                            Message Sent
+                        </div>
                     </div>
-                </div>
-                <br />
-
-                <label for="email"><b>E-mail <span class="required">*</span>
-                        <span class="error-msg" id="msg-email">E-mail is required!</span></b></label>
-                <input type="email" id="email" name="email" /><br /><br />
-
-                <label for="name"><b>Name </b></label>
-                <input type="text" id="name" name="name" /><br /><br />
-
-                <label for="message"><b>Message <span class="required">*</span>
-                        <span class="error-msg" id="msg-message">Message is required!</span></b></label>
-                <textarea id="message" name="message" rows="5" cols="60"></textarea><br /><br />
-
-                <div id="btn_container">
-                    <input type="submit" value="Submit"><br />
-                    <input type="reset" value="Clear">
-                </div>
-            </form>
+                    <br />
+    
+                    <label for="email"><b>E-mail <span class="required">*</span>
+                            <span class="error-msg" id="msg-email">E-mail is required!</span></b></label>
+                    <input type="email" id="email" name="email" /><br /><br />
+    
+                    <label for="name"><b>Name </b></label>
+                    <input type="text" id="name" name="name" /><br /><br />
+    
+                    <label for="message"><b>Message <span class="required">*</span>
+                            <span class="error-msg" id="msg-message">Message is required!</span></b></label>
+                    <textarea id="message" name="message" rows="5" cols="60"></textarea><br /><br />
+    
+                    <div id="btn_container">
+                        <input type="submit" value="Submit"><br />
+                        <input type="reset" value="Clear">
+                    </div>
+                </form>
+            </div>
         </div>
+
+        
     </div>
 
     <!-- Footer -->
@@ -249,5 +236,8 @@
         </div>
     </div>
     </div>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
