@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home-Men's Classsic</title>
+    <title>Products-Men's Classsic</title>
+    <script src="javascript/productlist.js"></script>
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -224,6 +225,21 @@
         .cart-logi i {
             font-size: 200px;
         }
+        #empty-cart {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #empty-cart h1{
+            font-size: 15px;
+            color: black;
+        }
+        #empty-cart i {
+            font-size: 80px;
+        }
 
         #empty-message {
             padding: 20px;
@@ -266,7 +282,7 @@
                     <li class="nav-item menu-link"><a href="contact.html">Contact</a></li>
                     <li class="nav-item menu-link"><a href="about.html">About</a></li>
                     <li class="nav-item menu-link"><a class="active" href="products.html">Products</a></li>
-                    <li class="nav-item menu-link"><a href="#shop">Shop</a></li>
+                    <li class="nav-item menu-link"><a href="shop.html">Shop</a></li>
                     <li class="nav-item menu-link"><a href="login.html">Log in</a></li>
                     <li class="nav-item menu-link"><a href="index.html">Home</a></li>
                 </div>
@@ -280,7 +296,7 @@
         <div id="ham-menu-container">
             <div id="ham-menu-content">
                 <li class="nav-item"><a href="index.html">Home</a></li>
-                <li class="nav-item"><a href="#shop">Shop</a></li>
+                <li class="nav-item"><a href="shop.html">Shop</a></li>
                 <li class="nav-item"><a class="active" href="products.html">Products</a></li>
                 <li class="nav-item"><a href="about.html">About</a></li>
                 <li class="nav-item"><a href="contact.html">Contact</a></li>
@@ -298,8 +314,10 @@
                         </div>
                     </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="500">
-                <div id="products_list"></div>
+                <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="600">
+                    <div id="products_list">
+
+                    </div>
                 </div>
             </div>
 
@@ -331,9 +349,15 @@
                     <button class="c-del cart">X</button>
                 </div>
             </template>
+            <template id="empty-template">
+                <div id="empty-cart">
+                    <h1>Your Cart is empty</h1>
+                    <i class="fa-solid fa-cart-plus"></i>
+                </div>
+            </template>
             <template id="template-cart-checkout">
                 <button class="c-empty cart" onclick="cart.empty()">Empty</button>
-                <button class="c-checkout cart" onclick="cart.checkout()">Checkout</button>
+                <button class="c-checkout cart" onclick="location.href = 'shop.html';">Checkout</button>
             </template>
         </div>
 
