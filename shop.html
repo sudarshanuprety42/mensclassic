@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop-Men's Classsic</title>
+    <script src="javascript/productlist.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="javascript/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="javascript/shop.js"></script>
+    <style>
+        #empty-cart {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #empty-cart i {
+            font-size: 80px;
+        }
+
+        #empty-cart a {
+            margin-top: 5px;
+            transition: 0.5s;
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 4px;
+            width: 150px;
+            text-align: center;
+            text-decoration: none;
+            background-color: var(--secondary-color1);
+            border-color: var(--secondary-color1);
+            color: white;
+            cursor: pointer;
+        }
+
+        #empty-cart a:hover {
+            background-color: var(--primary-color2);
+            border-color: var(--secondary-color1);
+            color: white;
+        }
+
+        .products-container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .products-container table,
+        .products-container th,
+        .products-container td {
+            border-collapse: collapse;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #shop_table {
+            width: 100%;
+            text-align: center;
+            background-color: dimgrey;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .s-img {
+            width: 100px;
+        }
+
+        .buy-btn {
+            margin-top: 5px;
+            transition: 0.5s;
+            font-size: 14px;
+            padding: 6px;
+            border-radius: 4px;
+            width: 40%;
+            background-color: var(--secondary-color1);
+            border-color: var(--secondary-color1);
+            color: white;
+            cursor: pointer;
+        }
+
+
+        .buy-btn:hover {
+            background-color: var(--primary-color2);
+            border-color: var(--secondary-color1);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Menu -->
+        <div class="nav-container">
+            <ul id="menu-list">
+                <li class="nav-item logo-link"><a href="index.html"><img src="images/nav-logo.jpg" width="70px"
+                            height="70px" /></a>
+                </li>
+                <div id="menu-container">
+                    <li class="nav-item menu-link"><a href="contact.html">Contact</a></li>
+                    <li class="nav-item menu-link"><a href="about.html">About</a></li>
+                    <li class="nav-item menu-link"><a href="products.html">Products</a></li>
+                    <li class="nav-item menu-link"><a class="active" href="shop.html">Shop</a></li>
+                    <li class="nav-item menu-link"><a href="login.html">Log in</a></li>
+                    <li class="nav-item menu-link"><a href="index.html">Home</a></li>
+                </div>
+                <div id="ham-icon">
+                    <a href="javascript:void(0);" class="icon" id="ham-btn" onclick="hamClick()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+        </div>
+        </ul>
+        <div id="ham-menu-container">
+            <div id="ham-menu-content">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="shop.html">Shop</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="about.html">About</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item"><a href="login.html">Log In</a></li>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+                <div class="products-container">
+
+                </div>
+            </div>
+            <template id="empty-template">
+                <div id="empty-cart">
+                    <h1>Your Cart is empty</h1>
+                    <i class="fa-solid fa-cart-plus"></i>
+                    <br>
+                    <a href="products.html">View Products</a>
+                </div>
+            </template>
+            <template id="buy-now">
+                <button class="buy-btn" onclick="()=>{}">Buy</button>
+            </template>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-container">
+            <div class="logo">
+                <a href="#"><img src="images/nav-logo.jpg" width="70px" height="70px"></a>
+            </div>
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
