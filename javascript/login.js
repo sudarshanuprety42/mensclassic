@@ -45,20 +45,29 @@ document.addEventListener("DOMContentLoaded", () => {
         
         uname = document.querySelector("#loginUserName");
         pwd = document.querySelector("#loginPwd");
-
-        console.log(uname.value);
-        console.log(pwd.value);
-        //perform login
+        
         if(uname.value.trim() === USERNAME && pwd.value.trim() === PASSWORD )
         {
-            setFormMessage(loginForm, "success", "Login successful");
+            swal({
+                title: "Success",
+                text: "Welcome "+uname.value,
+                icon: "success",
+                button: false
+              });
+            //setFormMessage(loginForm, "success", "Login successful");
             setTimeout(function() {
                 window.location.href = 'index.html';    
-            },1000);
+            },1500);
             
         }
         else{
-            setFormMessage(loginForm, "error", "username or Password invalid.");
+            swal({
+                title: "Error",
+                text: "Username or Password Invalid",
+                icon: "error",
+                button: false
+              });
+            //setFormMessage(loginForm, "error", "username or Password invalid.");
         }
 
        loginForm.addEventListener("input", e => {
@@ -77,7 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         loginForm.classList.remove("form-hidden");
         createAccountForm.classList.add("form-hidden");
-        setFormMessage(loginForm, "success","Account Created");
+
+        swal({
+            title: "Success",
+            text: "Account Created",
+            icon: "success",
+            button: false
+          });
+        //setFormMessage(loginForm, "success","Account Created");
     });
 
     document.querySelectorAll(".form-input").forEach(inputElement => {
